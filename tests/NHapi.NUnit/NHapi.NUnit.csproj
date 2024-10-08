@@ -51,6 +51,7 @@
     <ProjectReference Include="..\..\src\NHapi.Model.V24\NHapi.Model.V24.csproj" />
     <ProjectReference Include="..\..\src\NHapi.Model.V251\NHapi.Model.V251.csproj" />
     <ProjectReference Include="..\..\src\NHapi.Model.V25\NHapi.Model.V25.csproj" />
+    <ProjectReference Include="..\..\src\NHapi.Model.V25_CustomMessages\NHapi.Model.V25_CustomMessages.csproj" />
     <ProjectReference Include="..\..\src\NHapi.Model.V26\NHapi.Model.V26.csproj" />
     <ProjectReference Include="..\..\src\NHapi.Model.V271\NHapi.Model.V271.csproj" />
     <ProjectReference Include="..\..\src\NHapi.Model.V27\NHapi.Model.V27.csproj" />

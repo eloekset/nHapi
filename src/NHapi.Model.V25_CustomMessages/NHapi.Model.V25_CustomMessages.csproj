@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EventMapping\EventMap.properties" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NHapi.Base\NHapi.Base.csproj" />
+    <ProjectReference Include="..\NHapi.Model.V25\NHapi.Model.V25.csproj" />
+  </ItemGroup>
+
+</Project>
