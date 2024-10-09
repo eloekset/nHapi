@@ -6,7 +6,7 @@ using NHapi.Base.Model;
 using NHapi.Base.Parser;
 using NHapi.Model.V25.Datatype;
 
-namespace NHapi.Model.V25_CustomMessages
+namespace NHapi.Model.V25_CustomMessages.Segment
 {
     // ZFY_PatientFYIInformation
     [Serializable]

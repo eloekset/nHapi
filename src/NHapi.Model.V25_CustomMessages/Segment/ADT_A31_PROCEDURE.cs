@@ -6,7 +6,7 @@ using NHapi.Model.V25.Segment;
 using System;
 using System.Collections.Generic;
 
-namespace NHapi.Model.V25_CustomMessages
+namespace NHapi.Model.V25_CustomMessages.Segment
 {
     ///<summary>
     ///Represents the ADT_A31_PROCEDURE Group.  A Group is an ordered collection of message 

@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="EventMapping\EventMap.properties" />
+    <ProjectReference Include="..\NHapi.Base\NHapi.Base.csproj" />
+    <ProjectReference Include="..\NHapi.Model.V25\NHapi.Model.V25.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NHapi.Base\NHapi.Base.csproj" />
-    <ProjectReference Include="..\NHapi.Model.V25\NHapi.Model.V25.csproj" />
+    <Folder Include="EventMapping\" />
+    <Folder Include="Message\" />
+    <Folder Include="Segment\" />
   </ItemGroup>
 
 </Project>

@@ -6,8 +6,9 @@ using NHapi.Base.Log;
 using NHapi.Base.Model;
 using NHapi.Base.Parser;
 using NHapi.Model.V25.Segment;
+using NHapi.Model.V25_CustomMessages.Segment;
 
-namespace NHapi.Model.V25_CustomMessages
+namespace NHapi.Model.V25_CustomMessages.Message
 {
     ///<summary>
     /// Represents a ADT_A31 message structure (see chapter [AAA]). This structure contains the 

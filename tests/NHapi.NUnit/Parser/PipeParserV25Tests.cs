@@ -155,17 +155,17 @@ namespace NHapi.NUnit.Parser
         public void TestAdtA31ParsingFromHl7()
         {
             var message =
-                @"MSH|^~\&|EPIC|HNT||11^983974791^|20200303141713|100545AA|ADT^A31|452572|T|2.5|||NE|NE"
-              + @"EVN|A31|20210202132954||REG_MANUAL|PULTECH^PULMONARY^TECHNOLOGIST^^^^^^STO"
-              + @"PID|1||26028430972^^^NIN^NIN~E6980^^^EPIC^MRN||Awtcv^Fourteenseven||19870803|M|||VAR FRUE GATE 2703^^TRONDHEIM^NO-50^7012^NORGE^P^^5001|5001|96 52 55 30^P^H^^^96^525530~NET^Internet^AWTTEST1@test.com|||UKJ||910011747|26028430972|||||||||||N"
-              + @"PD1|||HNT NAM SYKEHUSET^^HNTNAMSH"
-              + @"PV1|1|O|NAHJERTEP^^^HNTNAMSH^^^^^HNT NAM SH KARDIOLOGI POLIKLINIKK^^IDEPID|||||2118386^SAMSTAD^STEIN^OLAV^^^^^PROVHPR^^^^PROVHPR||150|||||||||487559|EGEN|||||||||||||||||||||HOV*Conf|||20240812145850|||4000|||487559"
-              + @"PV2||||||||20240812145851||||102||||||||||N";
+                "MSH|^~\\&|EPIC|HNT||11^983974791^|20200303141713|100545AA|ADT^A31|452572|T|2.5|||NE|NE\r"
+              + "EVN|A31|20210202132954||REG_MANUAL|PULTECH^PULMONARY^TECHNOLOGIST^^^^^^STO\r"
+              + "PID|1||26028430972^^^NIN^NIN~E6980^^^EPIC^MRN||Awtcv^Fourteenseven||19870803|M|||VAR FRUE GATE 2703^^TRONDHEIM^NO-50^7012^NORGE^P^^5001|5001|96 52 55 30^P^H^^^96^525530~NET^Internet^AWTTEST1@test.com|||UKJ||910011747|26028430972|||||||||||N\r"
+              + "PD1|||HNT NAM SYKEHUSET^^HNTNAMSH\r"
+              + "PV1|1|O|NAHJERTEP^^^HNTNAMSH^^^^^HNT NAM SH KARDIOLOGI POLIKLINIKK^^IDEPID|||||2118386^SAMSTAD^STEIN^OLAV^^^^^PROVHPR^^^^PROVHPR||150|||||||||487559|EGEN|||||||||||||||||||||HOV*Conf|||20240812145850|||4000|||487559\r"
+              + "PV2||||||||20240812145851||||102||||||||||N\r";
 
             var parser = new PipeParser();
-            var parsed = parser.Parse(message);
-            Assert.That(null != parsed);
-            
+            var parsed = parser.Parse(message, NHapi.Model.V25_CustomMessages.Constants.VERSION);
+            Assert.That(parsed, Is.Not.Null);
+            Assert.That(parsed, Is.TypeOf(typeof(NHapi.Model.V25_CustomMessages.Message.ADT_A31)));
         }
 
         /// <summary>

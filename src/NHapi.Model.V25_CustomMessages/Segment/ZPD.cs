@@ -5,7 +5,7 @@ using NHapi.Base.Log;
 using NHapi.Base.Model;
 using NHapi.Base.Parser;
 
-namespace NHapi.Model.V25_CustomMessages
+namespace NHapi.Model.V25_CustomMessages.Segment
 {
     // ZPD
     [Serializable]
