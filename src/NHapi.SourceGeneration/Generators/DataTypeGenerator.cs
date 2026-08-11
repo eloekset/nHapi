@@ -510,7 +510,7 @@ namespace NHapi.SourceGeneration.Generators
                 source.Append("\t   } catch (DataTypeException e) {\r\n");
                 source.Append(
                     "\t      HapiLogFactory.GetHapiLog(this.GetType()).Error(\"Unexpected problem accessing known data type component - this is a bug.\", e);\r\n");
-                source.Append("\t      throw new System.Exception(\"An unexpected error occurred\",e);\r\n");
+                source.Append("\t      throw new System.Exception(\"An unexpected error ocurred\",e);\r\n");
                 source.Append("\t   }\r\n");
                 source.Append("\t   return ret;\r\n");
                 source.Append("}\r\n\r\n");
