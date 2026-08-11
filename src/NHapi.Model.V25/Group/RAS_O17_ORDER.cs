@@ -51,7 +51,7 @@ get{
 	      ret = (ORC)this.GetStructure("ORC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -66,7 +66,7 @@ get{
 	      ret = (RAS_O17_TIMING)this.GetStructure("TIMING");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -146,7 +146,7 @@ get{
 	      ret = (RAS_O17_ORDER_DETAIL)this.GetStructure("ORDER_DETAIL");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -162,7 +162,7 @@ get{
 	      ret = (RAS_O17_ENCODING)this.GetStructure("ENCODING");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -177,7 +177,7 @@ get{
 	      ret = (RAS_O17_ADMINISTRATION)this.GetStructure("ADMINISTRATION");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -256,7 +256,7 @@ get{
 	      ret = (CTI)this.GetStructure("CTI");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}

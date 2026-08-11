@@ -45,7 +45,7 @@ get{
 	      ret = (RSP_Z90_PATIENT)this.GetStructure("PATIENT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -60,7 +60,7 @@ get{
 	      ret = (RSP_Z90_COMMON_ORDER)this.GetStructure("COMMON_ORDER");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -139,7 +139,7 @@ get{
 	      ret = (RSP_Z90_SPECIMEN)this.GetStructure("SPECIMEN");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}

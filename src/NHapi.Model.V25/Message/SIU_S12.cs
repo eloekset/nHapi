@@ -41,7 +41,7 @@ public class SIU_S12 : AbstractMessage  {
 	}
 
 	///<summary>
-	/// initalize method for SIU_S12.  This does the segment setup for the message. 
+	/// initialize method for SIU_S12.  This does the segment setup for the message. 
 	///</summary> 
 	private void init(IModelClassFactory factory) {
 	   try {
@@ -73,7 +73,7 @@ get{
 	      ret = (MSH)this.GetStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -89,7 +89,7 @@ get{
 	      ret = (SCH)this.GetStructure("SCH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -104,7 +104,7 @@ get{
 	      ret = (TQ1)this.GetStructure("TQ1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -183,7 +183,7 @@ get{
 	      ret = (NTE)this.GetStructure("NTE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -262,7 +262,7 @@ get{
 	      ret = (SIU_S12_PATIENT)this.GetStructure("PATIENT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -341,7 +341,7 @@ get{
 	      ret = (SIU_S12_RESOURCES)this.GetStructure("RESOURCES");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}

@@ -38,7 +38,7 @@ public class CSU_C09 : AbstractMessage  {
 	}
 
 	///<summary>
-	/// initalize method for CSU_C09.  This does the segment setup for the message. 
+	/// initialize method for CSU_C09.  This does the segment setup for the message. 
 	///</summary> 
 	private void init(IModelClassFactory factory) {
 	   try {
@@ -67,7 +67,7 @@ get{
 	      ret = (MSH)this.GetStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -82,7 +82,7 @@ get{
 	      ret = (SFT)this.GetStructure("SFT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
@@ -161,7 +161,7 @@ get{
 	      ret = (CSU_C09_PATIENT)this.GetStructure("PATIENT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
+	      throw new System.Exception("An unexpected error occurred",e);
 	   }
 	   return ret;
 	}
