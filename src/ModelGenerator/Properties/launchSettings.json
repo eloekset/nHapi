@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ModelGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "--Version 2.5"
+    }
+  }
+}

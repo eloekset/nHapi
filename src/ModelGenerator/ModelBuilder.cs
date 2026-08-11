@@ -12,9 +12,10 @@
     {
         public ModelBuilder()
         {
-            BasePath = @"D:\projects\nhapi\SourceForge\nhapi20";
+            BasePath = @"C:\GitHub\nHapi\src";
             ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
             MessageTypeToBuild = MessageType.All;
+            Version = "2.5";
         }
 
         public enum MessageType
