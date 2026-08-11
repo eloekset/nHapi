@@ -22,8 +22,7 @@ namespace NHapi.Model.V25.Message
 ///<li>4: QAK (Query Acknowledgment) </li>
 ///<li>5: QPD (Query Parameter Definition) </li>
 ///<li>6: Hxx (any HL7 segment) </li>
-///<li>7: Hxx (any HL7 segment) </li>
-///<li>8: DSC (Continuation Pointer) optional </li>
+///<li>7: DSC (Continuation Pointer) optional </li>
 ///</ol>
 ///</summary>
 [Serializable]
@@ -54,7 +53,6 @@ public class RTB_Knn : AbstractMessage  {
 	      this.add(typeof(ERR), false, false);
 	      this.add(typeof(QAK), true, false);
 	      this.add(typeof(QPD), true, false);
-	      this.add(typeof(Hxx), true, false);
 	      this.add(typeof(Hxx), true, false);
 	      this.add(typeof(DSC), false, false);
 	   } catch(HL7Exception e) {
@@ -236,22 +234,6 @@ get{
 	   Hxx ret = null;
 	   try {
 	      ret = (Hxx)this.GetStructure("Hxx");
-	   } catch(HL7Exception e) {
-	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
-	   }
-	   return ret;
-	}
-	}
-
-	///<summary>
-	/// Returns Hxx2 (any HL7 segment) - creates it if necessary
-	///</summary>
-	public Hxx Hxx2 { 
-get{
-	   Hxx ret = null;
-	   try {
-	      ret = (Hxx)this.GetStructure("Hxx2");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

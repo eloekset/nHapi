@@ -21,17 +21,15 @@ namespace NHapi.Model.V25.Message
 ///<li>3: PID (Patient Identification) </li>
 ///<li>4: PD1 (Patient Additional Demographic) optional </li>
 ///<li>5: ROL (Role) optional repeating</li>
-///<li>6: PV1 (Patient Visit) optional </li>
-///<li>7: PV2 (Patient Visit - Additional Information) optional </li>
-///<li>8: ROL (Role) optional repeating</li>
-///<li>9: DB1 (Disability) optional repeating</li>
-///<li>10: DFT_P11_COMMON_ORDER (a Group object) optional repeating</li>
-///<li>11: DG1 (Diagnosis) optional repeating</li>
-///<li>12: DRG (Diagnosis Related Group) optional </li>
-///<li>13: GT1 (Guarantor) optional repeating</li>
-///<li>14: DFT_P11_INSURANCE (a Group object) optional repeating</li>
-///<li>15: ACC (Accident) optional </li>
-///<li>16: DFT_P11_FINANCIAL (a Group object) repeating</li>
+///<li>6: DFT_P11_VISIT (a Group object) optional </li>
+///<li>7: DB1 (Disability) optional repeating</li>
+///<li>8: DFT_P11_COMMON_ORDER (a Group object) optional repeating</li>
+///<li>9: DG1 (Diagnosis) optional repeating</li>
+///<li>10: DRG (Diagnosis Related Group) optional </li>
+///<li>11: GT1 (Guarantor) optional repeating</li>
+///<li>12: DFT_P11_INSURANCE (a Group object) optional repeating</li>
+///<li>13: ACC (Accident) optional </li>
+///<li>14: DFT_P11_FINANCIAL (a Group object) repeating</li>
 ///</ol>
 ///</summary>
 [Serializable]
@@ -62,9 +60,7 @@ public class DFT_P11 : AbstractMessage  {
 	      this.add(typeof(PID), true, false);
 	      this.add(typeof(PD1), false, false);
 	      this.add(typeof(ROL), false, true);
-	      this.add(typeof(PV1), false, false);
-	      this.add(typeof(PV2), false, false);
-	      this.add(typeof(ROL), false, true);
+	      this.add(typeof(DFT_P11_VISIT), false, false);
 	      this.add(typeof(DB1), false, true);
 	      this.add(typeof(DFT_P11_COMMON_ORDER), false, true);
 	      this.add(typeof(DG1), false, true);
@@ -308,114 +304,19 @@ get{
 	}
 
 	///<summary>
-	/// Returns PV1 (Patient Visit) - creates it if necessary
+	/// Returns DFT_P11_VISIT (a Group object) - creates it if necessary
 	///</summary>
-	public PV1 PV1 { 
+	public DFT_P11_VISIT VISIT { 
 get{
-	   PV1 ret = null;
+	   DFT_P11_VISIT ret = null;
 	   try {
-	      ret = (PV1)this.GetStructure("PV1");
+	      ret = (DFT_P11_VISIT)this.GetStructure("VISIT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
 	}
-	}
-
-	///<summary>
-	/// Returns PV2 (Patient Visit - Additional Information) - creates it if necessary
-	///</summary>
-	public PV2 PV2 { 
-get{
-	   PV2 ret = null;
-	   try {
-	      ret = (PV2)this.GetStructure("PV2");
-	   } catch(HL7Exception e) {
-	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
-	   }
-	   return ret;
-	}
-	}
-
-	///<summary>
-	/// Returns  first repetition of ROL2 (Role) - creates it if necessary
-	///</summary>
-	public ROL GetROL2() {
-	   ROL ret = null;
-	   try {
-	      ret = (ROL)this.GetStructure("ROL2");
-	   } catch(HL7Exception e) {
-	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
-	   }
-	   return ret;
-	}
-
-	///<summary>
-	///Returns a specific repetition of ROL2
-	/// * (Role) - creates it if necessary
-	/// throws HL7Exception if the repetition requested is more than one 
-	///     greater than the number of existing repetitions.
-	///</summary>
-	public ROL GetROL2(int rep) { 
-	   return (ROL)this.GetStructure("ROL2", rep);
-	}
-
-	/** 
-	 * Returns the number of existing repetitions of ROL2 
-	 */ 
-	public int ROL2RepetitionsUsed { 
-get{
-	    int reps = -1; 
-	    try { 
-	        reps = this.GetAll("ROL2").Length; 
-	    } catch (HL7Exception e) { 
-	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
-	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
-	        throw new System.Exception(message);
-	    } 
-	    return reps; 
-	}
-	} 
-
-	/** 
-	 * Enumerate over the ROL results 
-	 */ 
-	public IEnumerable<ROL> ROL2s 
-	{ 
-		get
-		{
-			for (int rep = 0; rep < ROL2RepetitionsUsed; rep++)
-			{
-				yield return (ROL)this.GetStructure("ROL2", rep);
-			}
-		}
-	}
-
-	///<summary>
-	///Adds a new ROL
-	///</summary>
-	public ROL AddROL2()
-	{
-		return this.AddStructure("ROL2") as ROL;
-	}
-
-	///<summary>
-	///Removes the given ROL
-	///</summary>
-	public void RemoveROL2(ROL toRemove)
-	{
-		this.RemoveStructure("ROL2", toRemove);
-	}
-
-	///<summary>
-	///Removes the ROL at the given index
-	///</summary>
-	public void RemoveROL2At(int index)
-	{
-		this.RemoveRepetition("ROL2", index);
 	}
 
 	///<summary>

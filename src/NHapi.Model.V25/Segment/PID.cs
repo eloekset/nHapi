@@ -103,7 +103,7 @@ public class PID : AbstractSegment  {
        this.add(typeof(CE), false, 1, 250, new System.Object[]{message}, "Species Code");
        this.add(typeof(CE), false, 1, 250, new System.Object[]{message}, "Breed Code");
        this.add(typeof(ST), false, 1, 80, new System.Object[]{message}, "Strain");
-       this.add(typeof(CE), false, 1, 250, new System.Object[]{message}, "Production Class Code");
+       this.add(typeof(CE), false, 2, 250, new System.Object[]{message}, "Production Class Code");
        this.add(typeof(CWE), false, 0, 250, new System.Object[]{message}, "Tribal Citizenship");
     } catch (HL7Exception he) {
         HapiLogFactory.GetHapiLog(GetType()).Error("Can't instantiate " + GetType().Name, he);
@@ -1417,28 +1417,63 @@ catch (HL7Exception he) {
   }
 
 	///<summary>
-	/// Returns Production Class Code(PID-38).
+	/// Returns a single repetition of Production Class Code(PID-38).
+	/// throws HL7Exception if the repetition number is invalid.
+	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE ProductionClassCode
+	public CE GetProductionClassCode(int rep)
 	{
-		get{
 			CE ret = null;
 			try
 			{
-			IType t = this.GetField(38, 0);
+			IType t = this.GetField(38, rep);
 				ret = (CE)t;
-			}
-			 catch (HL7Exception he) {
-			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
-				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
 			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
-	}
   }
 
+  ///<summary>
+  /// Returns all repetitions of Production Class Code (PID-38).
+   ///</summary>
+  public CE[] GetProductionClassCode() {
+     CE[] ret = null;
+    try {
+        IType[] t = this.GetField(38);  
+        ret = new CE[t.Length];
+        for (int i = 0; i < ret.Length; i++) {
+            ret[i] = (CE)t[i];
+        }
+    } catch (HL7Exception he) {
+        HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+    } catch (System.Exception cce) {
+        HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+  }
+ return ret;
+}
+
+  ///<summary>
+  /// Returns the total repetitions of Production Class Code (PID-38).
+   ///</summary>
+  public int ProductionClassCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(38);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Tribal Citizenship(PID-39).
 	/// throws HL7Exception if the repetition number is invalid.
