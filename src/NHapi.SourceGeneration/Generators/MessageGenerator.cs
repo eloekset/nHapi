@@ -233,7 +233,7 @@ namespace NHapi.SourceGeneration.Generators
             source.Append("\t   init(new DefaultModelClassFactory());\r\n");
             source.Append("\t}\r\n\r\n");
             source.Append("\t///<summary>\r\n");
-            source.Append("\t/// initalize method for ");
+            source.Append("\t/// initialize method for ");
             source.Append(messageName);
             source.Append(".  This does the segment setup for the message. \r\n");
             source.Append("\t///</summary> \r\n");

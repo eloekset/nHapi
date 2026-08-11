@@ -453,7 +453,7 @@ namespace NHapi.SourceGeneration.Generators
             source.Append("\t   } catch(HL7Exception e) {\r\n");
             source.Append(
                 "\t      HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected error accessing data - this is probably a bug in the source code generator.\", e);\r\n");
-            source.Append("\t      throw new System.Exception(\"An unexpected error ocurred\",e);\r\n");
+            source.Append("\t      throw new System.Exception(\"An unexpected error occurred\",e);\r\n");
             source.Append("\t   }\r\n");
             source.Append("\t   return ret;\r\n");
             if (!def.Repeating)

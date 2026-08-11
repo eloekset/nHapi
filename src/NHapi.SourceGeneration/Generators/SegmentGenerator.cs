@@ -455,13 +455,13 @@ namespace NHapi.SourceGeneration.Generators
                             source.Append("\t\t\t}\n\t\t\t catch (HL7Exception he) {\r\n");
                             source.Append(
                                 "\t\t\tHapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
-                            source.Append("\t\t\t\tthrow new System.Exception(\"An unexpected error ocurred\", he);\r\n");
+                            source.Append("\t\t\t\tthrow new System.Exception(\"An unexpected error occurred\", he);\r\n");
                         }
 
                         source.Append("\t\t} catch (System.Exception ex) {\r\n");
                         source.Append(
                             "\t\t\tHapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", ex);\r\n");
-                        source.Append("\t\t\t\tthrow new System.Exception(\"An unexpected error ocurred\", ex);\r\n");
+                        source.Append("\t\t\t\tthrow new System.Exception(\"An unexpected error occurred\", ex);\r\n");
                         source.Append("    }\r\n");
                         source.Append("\t\t\treturn ret;\r\n");
                         if (se.Repetitions == 1)
@@ -506,11 +506,11 @@ namespace NHapi.SourceGeneration.Generators
                             source.Append("    } catch (HL7Exception he) {\r\n");
                             source.Append(
                                 "        HapiLogFactory.GetHapiLog(this.GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
-                            source.Append("        throw new System.Exception(\"An unexpected error ocurred\", he);\r\n");
+                            source.Append("        throw new System.Exception(\"An unexpected error occurred\", he);\r\n");
                             source.Append("    } catch (System.Exception cce) {\r\n");
                             source.Append(
                                 "        HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
-                            source.Append("        throw new System.Exception(\"An unexpected error ocurred\", cce);\r\n");
+                            source.Append("        throw new System.Exception(\"An unexpected error occurred\", cce);\r\n");
                             source.Append("  }\r\n");
                             source.Append(" return ret;\r\n");
                             source.Append("}\r\n\r\n");
@@ -536,11 +536,11 @@ namespace NHapi.SourceGeneration.Generators
                             source.Append("catch (HL7Exception he) {\r\n");
                             source.Append(
                                 "        HapiLogFactory.GetHapiLog(this.GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
-                            source.Append("        throw new System.Exception(\"An unexpected error ocurred\", he);\r\n");
+                            source.Append("        throw new System.Exception(\"An unexpected error occurred\", he);\r\n");
                             source.Append("} catch (System.Exception cce) {\r\n");
                             source.Append(
                                 "        HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
-                            source.Append("        throw new System.Exception(\"An unexpected error ocurred\", cce);\r\n");
+                            source.Append("        throw new System.Exception(\"An unexpected error occurred\", cce);\r\n");
                             source.Append("}\r\n");
                             source.Append("}\r\n");
                             source.Append("}\r\n");
