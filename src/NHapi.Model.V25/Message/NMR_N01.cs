@@ -20,7 +20,7 @@ namespace NHapi.Model.V25.Message
 ///<li>2: MSA (Message Acknowledgment) </li>
 ///<li>3: ERR (Error) optional repeating</li>
 ///<li>4: QRD (Original-Style Query Definition) optional </li>
-///<li>5: NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) repeating</li>
+///<li>5: NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) optional repeating</li>
 ///</ol>
 ///</summary>
 [Serializable]
@@ -50,7 +50,7 @@ public class NMR_N01 : AbstractMessage  {
 	      this.add(typeof(MSA), true, false);
 	      this.add(typeof(ERR), false, true);
 	      this.add(typeof(QRD), false, false);
-	      this.add(typeof(NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT), true, true);
+	      this.add(typeof(NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT), false, true);
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating NMR_N01 - this is probably a bug in the source code generator.", e);
 	   }
