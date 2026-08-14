@@ -108,8 +108,8 @@ namespace NHapi.SourceGeneration.Generators
             // get list of data types
             var conn = NormativeDatabase.Instance.Connection;
             var sql =
-                "SELECT seg_code, [section] from HL7Segments, HL7Versions where HL7Segments.version_id = HL7Versions.version_id AND hl7_version = '" +
-                version + "'";
+                "SELECT seg_code, [section] from HL7Segments, HL7Versions where HL7Segments.version_id = HL7Versions.version_id AND " +
+                "HL7Segments.visible = 1 AND hl7_version = '" + version + "'";
             DbCommand temp_OleDbCommand = conn.CreateCommand();
             temp_OleDbCommand.Connection = conn;
             temp_OleDbCommand.CommandText = sql;
