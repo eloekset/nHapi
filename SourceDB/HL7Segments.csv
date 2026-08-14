@@ -616,9 +616,9 @@
 "ECR";81;"Equipment Command Response";"Antwort auf Gerätesteuerung";;0;0;1;"13.4.6";"ch13.html#Heading171";0;;2
 "ECR";91;"Equipment Command Response";"Antwort auf Gerätesteuerung";;0;0;1;"13.4.6";"ch13.html#Heading176";0;;2
 "ECR";92;"Equipment Command Response";"Antwort auf Gerätesteuerung";;0;0;1;"13.4.6";"ch13.html#Heading176";0;;2
-"ED";6;"Encapsulated Data (wrong segment)";"Encapsulated Data (falsche Segmentdefinition)";;0;0;1;"7.11.2";;0;;2
-"ED";7;"Encapsulated Data (wrong segment)";"Encapsulated Data (falsche Segmentdefinition)";;0;0;1;"7.11.2";;0;;2
-"ED";61;"Encapsulated Data (wrong segment)";"Encapsulated Data (falsche Segmentdefinition)";;0;0;1;"7.11.2";;0;;2
+"ED";6;"Encapsulated Data (wrong segment)";"Encapsulated Data (falsche Segmentdefinition)";;0;0;0;"7.11.2";;0;;2
+"ED";7;"Encapsulated Data (wrong segment)";"Encapsulated Data (falsche Segmentdefinition)";;0;0;0;"7.11.2";;0;;2
+"ED";61;"Encapsulated Data (wrong segment)";"Encapsulated Data (falsche Segmentdefinition)";;0;0;0;"7.11.2";;0;;2
 "EDU";5;"Educational Detail";"Ausbildungsinformationen";;0;0;1;"15.4.2";"ch15.htm#Heading21";0;"PA";2
 "EDU";6;"Educational Detail";"Ausbildungsinformationen";;0;0;1;"15.4.3";"ch15.html#Heading56";0;"PA";2
 "EDU";7;"Educational Detail";"Ausbildungsinformationen";;0;0;1;"15.4.3";"ch15.html#Heading56";0;"PA";2
