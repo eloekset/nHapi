@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.8.12023.21 stable
+VisualStudioVersion = 18.8.12023.21
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHapi.SourceGeneration", "src\NHapi.SourceGeneration\NHapi.SourceGeneration.csproj", "{FFC8315C-25E5-497A-86D2-6A4C411B1559}"
 EndProject
@@ -56,6 +56,22 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHapi.NUnit.SourceGeneration", "tests\NHapi.NUnit.SourceGeneration\NHapi.NUnit.SourceGeneration.csproj", "{003E674D-F010-4136-AB5A-C3EA6305A99F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Benchmarks", "tests\NHapi.Benchmarks\NHapi.Benchmarks.csproj", "{866F476C-F363-4556-A2DF-BE75132E590C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceDB", "SourceDB", "{92B49371-01B8-483A-BE17-A5AA3AA5DDBD}"
+	ProjectSection(SolutionItems) = preProject
+		SourceDB\HL7Components.csv = SourceDB\HL7Components.csv
+		SourceDB\HL7DataElements.csv = SourceDB\HL7DataElements.csv
+		SourceDB\HL7DataStructureComponents.csv = SourceDB\HL7DataStructureComponents.csv
+		SourceDB\HL7DataStructures.csv = SourceDB\HL7DataStructures.csv
+		SourceDB\HL7DataTypes.csv = SourceDB\HL7DataTypes.csv
+		SourceDB\HL7EventMessageTypeSegments.csv = SourceDB\HL7EventMessageTypeSegments.csv
+		SourceDB\HL7MessageTypes.csv = SourceDB\HL7MessageTypes.csv
+		SourceDB\HL7MsgStructIDs.csv = SourceDB\HL7MsgStructIDs.csv
+		SourceDB\HL7MsgStructIDSegments.csv = SourceDB\HL7MsgStructIDSegments.csv
+		SourceDB\HL7SegmentDataElements.csv = SourceDB\HL7SegmentDataElements.csv
+		SourceDB\HL7Segments.csv = SourceDB\HL7Segments.csv
+		SourceDB\HL7Versions.csv = SourceDB\HL7Versions.csv
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -168,6 +184,7 @@ Global
 		{C26D8167-FC47-4E37-9F26-130251782761} = {65FE0FF9-296E-4C9B-A670-05D7AC663569}
 		{003E674D-F010-4136-AB5A-C3EA6305A99F} = {65FE0FF9-296E-4C9B-A670-05D7AC663569}
 		{866F476C-F363-4556-A2DF-BE75132E590C} = {65FE0FF9-296E-4C9B-A670-05D7AC663569}
+		{92B49371-01B8-483A-BE17-A5AA3AA5DDBD} = {14D20F5F-87E7-41BD-BE24-991081E0DE60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A748B98-FEF1-4CFB-951E-48F8BE10B5AB}
