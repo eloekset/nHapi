@@ -73,6 +73,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceDB", "SourceDB", "{92
 		SourceDB\HL7Versions.csv = SourceDB\HL7Versions.csv
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelGeneratorSourceDB", "src\ModelGeneratorSourceDB\ModelGeneratorSourceDB.csproj", "{8450F1FB-D833-4686-BCA6-712BD6020407}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{866F476C-F363-4556-A2DF-BE75132E590C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{866F476C-F363-4556-A2DF-BE75132E590C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{866F476C-F363-4556-A2DF-BE75132E590C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8450F1FB-D833-4686-BCA6-712BD6020407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8450F1FB-D833-4686-BCA6-712BD6020407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8450F1FB-D833-4686-BCA6-712BD6020407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8450F1FB-D833-4686-BCA6-712BD6020407}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -185,6 +191,7 @@ Global
 		{003E674D-F010-4136-AB5A-C3EA6305A99F} = {65FE0FF9-296E-4C9B-A670-05D7AC663569}
 		{866F476C-F363-4556-A2DF-BE75132E590C} = {65FE0FF9-296E-4C9B-A670-05D7AC663569}
 		{92B49371-01B8-483A-BE17-A5AA3AA5DDBD} = {14D20F5F-87E7-41BD-BE24-991081E0DE60}
+		{8450F1FB-D833-4686-BCA6-712BD6020407} = {9FC71692-FA33-4213-8323-E53688BCA633}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A748B98-FEF1-4CFB-951E-48F8BE10B5AB}
