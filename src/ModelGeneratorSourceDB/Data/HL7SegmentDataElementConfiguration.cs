@@ -15,6 +15,7 @@
             builder.Property(b => b.SegmentCode).HasColumnName("seg_code");
             builder.Property(b => b.VersionId).HasColumnName("version_id");
             builder.Property(b => b.SequenceNo).HasColumnName("seq_no");
+            builder.Property(b => b.DataItem).HasColumnName("data_item");
             builder.Property(b => b.Reqired).HasColumnName("req_opt");
         }
     }

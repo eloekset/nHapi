@@ -12,6 +12,8 @@
 
         public int? SequenceNo { get; set; }
 
+        public int? DataItem { get; set; }
+
         /// <summary>
         /// Required/Optional/Backward Compatibility.
         /// </summary>
