@@ -88,6 +88,8 @@ namespace ModelGeneratorSourceDB
                     ["seq_no"] = nameof(HL7SegmentDataElement.SequenceNo),
                     ["data_item"] = nameof(HL7SegmentDataElement.DataItem),
                     ["req_opt"] = nameof(HL7SegmentDataElement.Reqired),
+                    ["repetitional"] = nameof(HL7SegmentDataElement.Repetitional),
+                    ["repetitions"] = nameof(HL7SegmentDataElement.Repetitions),
                 },
                 [typeof(HL7Version)] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {

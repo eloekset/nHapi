@@ -18,5 +18,9 @@
         /// Required/Optional/Backward Compatibility.
         /// </summary>
         public string Reqired { get; set; }
+
+        public string Repetitional { get; set; }
+
+        public int? Repetitions { get; set; }
     }
 }

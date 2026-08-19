@@ -17,6 +17,8 @@
             builder.Property(b => b.SequenceNo).HasColumnName("seq_no");
             builder.Property(b => b.DataItem).HasColumnName("data_item");
             builder.Property(b => b.Reqired).HasColumnName("req_opt");
+            builder.Property(b => b.Repetitional).HasColumnName("repetitional");
+            builder.Property(b => b.Repetitions).HasColumnName("repetitions");
         }
     }
 }
