@@ -32,6 +32,8 @@ namespace NHapi.SourceGeneration
     using System.Data.OleDb;
     using System.Diagnostics;
 
+    using Microsoft.Data.Sqlite;
+
     using NHapi.Base.Log;
 
     /// <summary>
@@ -68,7 +70,7 @@ namespace NHapi.SourceGeneration
         private string connectionString;
 
         /// <summary> Returns the singleton instance of NormativeDatabase.  </summary>
-        private OleDbConnection odbcConnection;
+        private DbConnection odbcConnection;
 
         static NormativeDatabase()
         {
@@ -81,7 +83,7 @@ namespace NHapi.SourceGeneration
         private NormativeDatabase()
         {
             connectionString = ConfigurationSettings.ConnectionString;
-            odbcConnection = new OleDbConnection(connectionString);
+            odbcConnection = CreateConnection(connectionString);
             odbcConnection.Open();
         }
 
@@ -105,7 +107,7 @@ namespace NHapi.SourceGeneration
         /// <summary> Provides a Connection to the normative database.
         /// A new connection may be created if none are available.
         /// </summary>
-        public virtual OleDbConnection Connection
+        public virtual DbConnection Connection
         {
             get
             {
@@ -166,10 +168,26 @@ namespace NHapi.SourceGeneration
         /// given connection is not in fact a connection to the normative database, it is
         /// discarded.
         /// </summary>
-        public virtual void ReturnConnection(OleDbConnection conn)
+        public virtual void ReturnConnection(DbConnection conn)
         {
             // check if this is a normative DB connection
             this.odbcConnection.Close();
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="DbConnection"/> for the configured <see cref="DatabaseProvider"/>
+        /// (either an MS Access database via OleDb, or a SQLite database).
+        /// </summary>
+        private static DbConnection CreateConnection(string connString)
+        {
+            switch (ConfigurationSettings.DatabaseProvider)
+            {
+                case DatabaseProvider.Sqlite:
+                    return new SqliteConnection(connString);
+                case DatabaseProvider.OleDb:
+                default:
+                    return new OleDbConnection(connString);
+            }
         }
 
         [DebuggerHidden]
@@ -184,7 +202,7 @@ namespace NHapi.SourceGeneration
             }
             catch (Exception)
             {
-                odbcConnection = new OleDbConnection(connectionString);
+                odbcConnection = CreateConnection(connectionString);
                 odbcConnection.Open();
             }
         }
