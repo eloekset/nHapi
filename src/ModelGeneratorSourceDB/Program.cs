@@ -3,6 +3,7 @@
     using System;
 
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
 
     using ModelGeneratorSourceDB.Data;
 
@@ -19,7 +20,12 @@
         {
             var command = Args.Configuration.Configure<SourceDB>().CreateAndBind(args);
             var services = new ServiceCollection();
-            services.AddLogging();
+            services.AddLogging(builder =>
+            {
+                builder.AddConsole();
+                builder.SetMinimumLevel(LogLevel.Information);
+                builder.AddFilter("Microsoft", LogLevel.Warning);
+            });
             services.AddSingleton(command);
             services.AddSqlite<HL7ModelContext>(command.ConnectionString);
             services.AddSingleton<SqliteImporter>();

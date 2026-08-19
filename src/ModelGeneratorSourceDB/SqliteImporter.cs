@@ -93,6 +93,7 @@
 
         private void ClearDb()
         {
+            _logger.LogWarning("Clearing existing data from the database before import.");
             _dbContext.Components.ExecuteDelete();
             _dbContext.DataElements.ExecuteDelete();
             _dbContext.DataStructureComponents.ExecuteDelete();
@@ -113,36 +114,47 @@
                 switch (tableName)
                 {
                     case TableNames.Hl7Components:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7Component>)records).Count()} records to {tableName}.");
                         _dbContext.Components.AddRange((IEnumerable<HL7Component>)records);
                         break;
                     case TableNames.Hl7DataElements:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7DataElement>)records).Count()} records to {tableName}.");
                         _dbContext.DataElements.AddRange((IEnumerable<HL7DataElement>)records);
                         break;
                     case TableNames.Hl7DataStructureComponents:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7DataStructureComponent>)records).Count()} records to {tableName}.");
                         _dbContext.DataStructureComponents.AddRange((IEnumerable<HL7DataStructureComponent>)records);
                         break;
                     case TableNames.Hl7DataStructures:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7DataStructure>)records).Count()} records to {tableName}.");
                         _dbContext.DataStructures.AddRange((IEnumerable<HL7DataStructure>)records);
                         break;
                     case TableNames.Hl7DataTypes:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7DataType>)records).Count()} records to {tableName}.");
                         _dbContext.DataTypes.AddRange((IEnumerable<HL7DataType>)records);
                         break;
                     case TableNames.Hl7EventMessageTypeSegments:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7EventMessageTypeSegment>)records).Count()} records to {tableName}.");
                         _dbContext.EventMessageTypeSegments.AddRange((IEnumerable<HL7EventMessageTypeSegment>)records);
                         break;
                     case TableNames.Hl7MsgStructIDs:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7MsgStructId>)records).Count()} records to {tableName}.");
                         _dbContext.MsgStructIds.AddRange((IEnumerable<HL7MsgStructId>)records);
                         break;
                     case TableNames.Hl7MsgStructIDSegments:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7MsgStructIdSegment>)records).Count()} records to {tableName}.");
                         _dbContext.MsgStructIdSegments.AddRange((IEnumerable<HL7MsgStructIdSegment>)records);
                         break;
                     case TableNames.Hl7SegmentDataElements:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7SegmentDataElement>)records).Count()} records to {tableName}.");
                         _dbContext.SegmentDataElements.AddRange((IEnumerable<HL7SegmentDataElement>)records);
                         break;
                     case TableNames.Hl7Segments:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7Segment>)records).Count()} records to {tableName}.");
                         _dbContext.Segments.AddRange((IEnumerable<HL7Segment>)records);
                         break;
                     case TableNames.Hl7Versions:
+                        _logger.LogInformation($"Adding {((IEnumerable<HL7Version>)records).Count()} records to {tableName}.");
                         _dbContext.Versions.AddRange((IEnumerable<HL7Version>)records);
                         break;
                     default:

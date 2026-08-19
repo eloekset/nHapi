@@ -8,8 +8,17 @@
     using System.Reflection;
     using System.Text;
 
+    using Microsoft.Extensions.Logging;
+
     public class CsvParser
     {
+        private readonly ILogger<CsvParser> _logger;
+
+        public CsvParser(ILogger<CsvParser> logger) 
+        {
+            _logger = logger;
+        }
+
         /// <summary>
         /// Parses a delimited CSV file into a list of dictionaries keyed by column header.
         /// </summary>
@@ -17,7 +26,12 @@
         {
             var records = new List<Dictionary<string, object>>();
             var lines = ReadLines(filePath);
-            if (lines.Count == 0) return records;
+            _logger.LogInformation($"Parsing CSV file: {filePath} with {lines.Count} lines.");
+            if (lines.Count == 0) 
+            {
+                _logger.LogWarning($"CSV file: {filePath} is empty.");
+                return records;
+            }
 
             var headers = SplitLine(lines[0], delimiter).Select(UnquoteAndTrim).ToArray();
             for (int i = 1; i < lines.Count; i++)
@@ -33,6 +47,7 @@
                 }
                 records.Add(record);
             }
+            _logger.LogInformation($"{records.Count} records parsed from CSV file: {filePath}");
             return records;
         }
 
@@ -46,7 +61,12 @@
         {
             var results = new List<T>();
             var lines = ReadLines(filePath);
-            if (lines.Count == 0) return results;
+            _logger.LogInformation($"Parsing CSV file: {filePath} with {lines.Count} lines.");
+            if (lines.Count == 0)
+            {
+                _logger.LogWarning($"CSV file: {filePath} is empty.");
+                return results;
+            }
 
             var headers = SplitLine(lines[0], delimiter).Select(UnquoteAndTrim).ToArray();
             var propertyMap = BuildPropertyMap<T>(headers);
@@ -66,6 +86,7 @@
                 }
                 results.Add(instance);
             }
+            _logger.LogInformation($"{results.Count} records parsed from CSV file: {filePath}");
             return results;
         }
 
