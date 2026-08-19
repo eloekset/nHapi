@@ -78,6 +78,7 @@ namespace ModelGeneratorSourceDB
                     ["seg_code"] = nameof(HL7Segment.SegmentCode),
                     ["version_id"] = nameof(HL7Segment.VersionId),
                     ["description"] = nameof(HL7Segment.Description),
+                    ["section"] = nameof(HL7Segment.Section),
                 },
                 [typeof(HL7SegmentDataElement)] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {
