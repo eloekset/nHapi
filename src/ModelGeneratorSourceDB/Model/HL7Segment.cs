@@ -12,6 +12,8 @@
 
         public string Description { get; set; }
 
+        public bool Visible { get; set; }
+
         public string Section { get; set; }
     }
 }
