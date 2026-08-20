@@ -14,6 +14,7 @@
             builder.Property(b => b.Id).HasColumnName("id");
             builder.Property(b => b.MessageStructure).HasColumnName("message_structure");
             builder.Property(b => b.VersionId).HasColumnName("version_id");
+            builder.Property(b => b.Section).HasColumnName("section");
         }
     }
 }

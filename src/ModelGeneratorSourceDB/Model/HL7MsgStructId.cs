@@ -9,5 +9,7 @@
         public string MessageStructure { get; set; }
 
         public int? VersionId { get; set; }
+
+        public string Section { get; set; }
     }
 }

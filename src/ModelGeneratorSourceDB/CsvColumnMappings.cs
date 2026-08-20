@@ -66,6 +66,7 @@ namespace ModelGeneratorSourceDB
                 {
                     ["message_structure"] = nameof(HL7MsgStructId.MessageStructure),
                     ["version_id"] = nameof(HL7MsgStructId.VersionId),
+                    ["section"] = nameof(HL7MsgStructId.Section),
                 },
                 [typeof(HL7MsgStructIdSegment)] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {
