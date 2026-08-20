@@ -58,6 +58,7 @@ namespace ModelGeneratorSourceDB
                     ["event_code"] = nameof(HL7EventMessageTypeSegment.EventCode),
                     ["version_id"] = nameof(HL7EventMessageTypeSegment.VersionId),
                     ["message_type"] = nameof(HL7EventMessageTypeSegment.MessageType),
+                    ["seg_code"] = nameof(HL7EventMessageTypeSegment.SegmentCode),
                     ["seq_no"] = nameof(HL7EventMessageTypeSegment.SequenceNo),
                     ["groupname"] = nameof(HL7EventMessageTypeSegment.GroupName),
                     ["repetitional"] = nameof(HL7EventMessageTypeSegment.Repetitional),

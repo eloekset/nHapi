@@ -15,6 +15,7 @@
             builder.Property(b => b.EventCode).HasColumnName("event_code");
             builder.Property(b => b.VersionId).HasColumnName("version_id");
             builder.Property(b => b.MessageType).HasColumnName("message_type");
+            builder.Property(b => b.SegmentCode).HasColumnName("seg_code");
             builder.Property(b => b.SequenceNo).HasColumnName("seq_no");
             builder.Property(b => b.GroupName).HasColumnName("groupname");
             builder.Property(b => b.Repetitional).HasColumnName("repetitional");

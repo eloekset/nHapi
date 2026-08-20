@@ -12,6 +12,8 @@
 
         public string MessageType { get; set; }
 
+        public string SegmentCode { get; set; }
+
         public int? SequenceNo { get; set; }
 
         public string GroupName { get; set; }
