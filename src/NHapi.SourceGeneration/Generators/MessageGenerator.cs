@@ -69,7 +69,7 @@ namespace NHapi.SourceGeneration.Generators
             // get list of messages ...
             using (var conn = NormativeDatabase.Instance.Connection)
             {
-                var sql = GetMessageListQuery(version);
+                var sql = GetMessageListQuery(version, ConfigurationSettings.DatabaseProvider);
                 var stmt = TransactionManager.Manager.CreateStatement(conn);
                 DbCommand temp_OleDbCommand;
                 temp_OleDbCommand = stmt;
@@ -285,10 +285,12 @@ namespace NHapi.SourceGeneration.Generators
         /// <summary> Returns an SQL query with which to get a list of messages from the normative
         /// database.
         /// </summary>
-        private static string GetMessageListQuery(string version)
+        private static string GetMessageListQuery(string version, DatabaseProvider databaseProvider)
         {
+            var concat = GetConcatOperator(databaseProvider);
+
             // UNION because the messages are defined in different tables for different versions.
-            return "SELECT distinct  [message_type]+'_'+[event_code] AS msg_struct, '[AAA]'" +
+            return "SELECT distinct  [message_type]" + concat + "'_'" + concat + "[event_code] AS msg_struct, '[AAA]'" +
                      " FROM HL7Versions RIGHT JOIN HL7EventMessageTypeSegments ON HL7EventMessageTypeSegments.version_id = HL7Versions.version_id " +
                      "WHERE HL7Versions.hl7_version ='" + version + "' and Not (message_type='ACK') " + "UNION " +
                      "select distinct HL7MsgStructIDs.message_structure, [section] from HL7Versions RIGHT JOIN (HL7MsgStructIDSegments " +
@@ -296,6 +298,22 @@ namespace NHapi.SourceGeneration.Generators
                      " and HL7MsgStructIDSegments.version_id = HL7MsgStructIDs.version_id) " +
                      " ON HL7MsgStructIDSegments.version_id = HL7Versions.version_id " + " where HL7Versions.hl7_version = '" +
                      version + "' and HL7MsgStructIDs.message_structure not like 'ACK_%'"; // note: allows "ACK" itself
+        }
+
+        /// <summary> Returns the string concatenation operator supported by the given database provider.
+        /// MS Access (OleDb) supports '+' for string concatenation, while SQLite requires '||'.
+        /// </summary>
+        private static string GetConcatOperator(DatabaseProvider databaseProvider)
+        {
+            switch (databaseProvider)
+            {
+                case DatabaseProvider.Sqlite:
+                    return "||";
+                case DatabaseProvider.OleDb:
+                    return "+";
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(databaseProvider), databaseProvider, null);
+            }
         }
 
         /// <summary> Queries the normative database for a list of segments comprising
@@ -307,7 +325,7 @@ namespace NHapi.SourceGeneration.Generators
         /// </summary>
         private static SegmentDef[] GetSegments(string message, string version)
         {
-            var sql = GetSegmentListQuery(message, version);
+            var sql = GetSegmentListQuery(message, version, ConfigurationSettings.DatabaseProvider);
 
             // System.out.println(sql.toString());
             var segments = new SegmentDef[200]; // presumably there won't be more than 200
@@ -346,15 +364,16 @@ namespace NHapi.SourceGeneration.Generators
         /// varies with different versions.  The fields returned are as follows:
         /// segment_code, repetitional, optional, description.
         /// </summary>
-        private static string GetSegmentListQuery(string message, string version)
+        private static string GetSegmentListQuery(string message, string version, DatabaseProvider databaseProvider)
         {
+            var concat = GetConcatOperator(databaseProvider);
             string sql = null;
 
             sql = "SELECT HL7Segments.seg_code, repetitional, optional, HL7Segments.description, seq_no, groupname " +
                     "FROM HL7Versions RIGHT JOIN (HL7Segments INNER JOIN HL7EventMessageTypeSegments ON (HL7Segments.version_id = HL7EventMessageTypeSegments.version_id) " +
                     "AND (HL7Segments.seg_code = HL7EventMessageTypeSegments.seg_code)) " +
                     "ON HL7Segments.version_id = HL7Versions.version_id " + "WHERE (((HL7Versions.hl7_version)= '" + version +
-                    "') " + "AND (([message_type]+'_'+[event_code])='" + message + "')) UNION " +
+                    "') " + "AND (([message_type]" + concat + "'_'" + concat + "[event_code])='" + message + "')) UNION " +
                     "select HL7Segments.seg_code, repetitional, optional, HL7Segments.description, seq_no, groupname  " +
                     "from HL7Versions RIGHT JOIN (HL7MsgStructIDSegments inner join HL7Segments on HL7MsgStructIDSegments.seg_code = HL7Segments.seg_code " +
                     "and HL7MsgStructIDSegments.version_id = HL7Segments.version_id) " +
