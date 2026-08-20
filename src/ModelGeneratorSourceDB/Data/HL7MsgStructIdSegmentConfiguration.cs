@@ -15,6 +15,10 @@
             builder.Property(b => b.MessageStructure).HasColumnName("message_structure");
             builder.Property(b => b.VersionId).HasColumnName("version_id");
             builder.Property(b => b.SegmentCode).HasColumnName("seg_code");
+            builder.Property(b => b.SequenceNo).HasColumnName("seq_no");
+            builder.Property(b => b.GroupName).HasColumnName("groupname");
+            builder.Property(b => b.Repetitional).HasColumnName("repetitional");
+            builder.Property(b => b.Optional).HasColumnName("optional");
         }
     }
 }

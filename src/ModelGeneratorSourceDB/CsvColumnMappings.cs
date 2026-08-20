@@ -58,6 +58,7 @@ namespace ModelGeneratorSourceDB
                     ["event_code"] = nameof(HL7EventMessageTypeSegment.EventCode),
                     ["version_id"] = nameof(HL7EventMessageTypeSegment.VersionId),
                     ["message_type"] = nameof(HL7EventMessageTypeSegment.MessageType),
+                    ["seq_no"] = nameof(HL7EventMessageTypeSegment.SequenceNo),
                     ["groupname"] = nameof(HL7EventMessageTypeSegment.GroupName),
                     ["repetitional"] = nameof(HL7EventMessageTypeSegment.Repetitional),
                     ["optional"] = nameof(HL7EventMessageTypeSegment.Optional),
@@ -73,6 +74,10 @@ namespace ModelGeneratorSourceDB
                     ["message_structure"] = nameof(HL7MsgStructIdSegment.MessageStructure),
                     ["version_id"] = nameof(HL7MsgStructIdSegment.VersionId),
                     ["seg_code"] = nameof(HL7MsgStructIdSegment.SegmentCode),
+                    ["seq_no"] = nameof(HL7MsgStructIdSegment.SequenceNo),
+                    ["groupname"] = nameof(HL7MsgStructIdSegment.GroupName),
+                    ["repetitional"] = nameof(HL7MsgStructIdSegment.Repetitional),
+                    ["optional"] = nameof(HL7MsgStructIdSegment.Optional),
                 },
                 [typeof(HL7Segment)] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {

@@ -9,6 +9,15 @@
         public string MessageStructure { get; set; }
 
         public int? VersionId { get; set; }
+
         public string SegmentCode { get; set; }
+
+        public int? SequenceNo { get; set; }
+
+        public string GroupName { get; set; }
+
+        public bool Repetitional { get; set; }
+
+        public bool Optional { get; set; }
     }
 }
